@@ -1,5 +1,10 @@
 package com.github.wens.service;
 
+import com.github.wens.im.storage.DaoFactory;
+import com.github.wens.im.storage.TokenDao;
+import com.github.wens.im.storage.UserDao;
+import com.github.wens.im.storage.domain.Token;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,21 +14,21 @@ import java.util.Map;
  */
 public class UserService {
 
-    private Map<String,String> tokens ;
+    private UserDao userDao = DaoFactory.createUserDao() ;
+
+    private TokenDao tokenDao = DaoFactory.createTokenDao();
 
     public UserService(){
-        tokens = new HashMap<>() ;
-        tokens.put("token123" , "123") ;
-        tokens.put("token456" , "456") ;
-        tokens.put("token789" , "789") ;
+
 
     }
 
-    public String authorize(String token) {
-        return tokens.get(token);
+    public String authorize(String tokenId ) {
+        Token token  = tokenDao.find(tokenId) ;
+        return token != null ? token.getUserId() : null ;
     }
 
     public List<String> findUserByGroup(String group) {
-        return null;
+        return userDao.queryUserByGroup(group);
     }
 }

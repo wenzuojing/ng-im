@@ -47,6 +47,18 @@
             <artifactId>fastjson</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.github.wens</groupId>
+            <artifactId>storage</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.wens</groupId>
+            <artifactId>big-queue</artifactId>
+        </dependency>
+
+
+
     </dependencies>
 
 

@@ -12,7 +12,7 @@ public class MessagePacket implements Serializable {
     public final static int PACKET_TYPE_P2P_MSG = 3;
     public final static int PACKET_TYPE_P2G_MSG = 4;
 
-    private String msgId;
+    private long msgId;
     private int packetType;
     private int flag;
     private byte[] payload;
@@ -23,11 +23,11 @@ public class MessagePacket implements Serializable {
         this.payload = payload;
     }
 
-    public String getMsgId() {
+    public long getMsgId() {
         return msgId;
     }
 
-    public void setMsgId(String msgId) {
+    public void setMsgId(long msgId) {
         this.msgId = msgId;
     }
 

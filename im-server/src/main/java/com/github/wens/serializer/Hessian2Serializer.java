@@ -1,4 +1,4 @@
-package com.github.wens.exchange;
+package com.github.wens.serializer;
 
 import com.caucho.hessian.io.Hessian2Input;
 import com.caucho.hessian.io.Hessian2Output;

@@ -2,6 +2,8 @@ package com.github.wens.exchange;
 
 import com.github.wens.MessageContent;
 import com.github.wens.MessagePacket;
+import com.github.wens.serializer.Hessian2Serializer;
+import com.github.wens.serializer.Serializer;
 import com.github.wens.service.BrokerService;
 import com.github.wens.util.ByteUtils;
 import com.github.wens.util.JsonUtils;
@@ -10,7 +12,6 @@ import org.jgroups.util.UUID;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 import java.util.HashMap;
